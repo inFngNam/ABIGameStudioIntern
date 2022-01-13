@@ -10,12 +10,19 @@ public class IncreaseSize : MonoBehaviour
     [SerializeField]
     private float increaseValue = 0.25f;
 
+    private int totalAteFoods = 0;
+
     private void OnControllerColliderHit(ControllerColliderHit hitCollision)
     {
-        if (hitCollision.gameObject.CompareTag("Food") && totalIncreaseTime > 0)
+        if (hitCollision.gameObject.CompareTag("Food"))
         {
-            transform.localScale += Vector3.one * increaseValue;
-            totalIncreaseTime--;
+            hitCollision.transform.SendMessage("Eaten");
+            if (totalIncreaseTime > 0)
+            {
+                transform.localScale += Vector3.one * increaseValue;
+                totalIncreaseTime--;
+            }
+            totalAteFoods++;
         }
     }
 }

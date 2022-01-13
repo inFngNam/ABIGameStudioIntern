@@ -43,16 +43,13 @@ public class Food : MonoBehaviour
         transform.position = new Vector3(transform.position.x, positionY + Mathf.Sin(Time.time * transformSpeed) * transformHeight, transform.position.z);
     }
     
-    private void OnCollisionEnter(Collision collision)
+    public void Eaten()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (isEnabled)
         {
-            if (isEnabled)
-            {
-                renderer.enabled = false;
-                collider.enabled = false;
-                isEnabled = false;
-            }
+            renderer.enabled = false;
+            collider.enabled = false;
+            isEnabled = false;
         }
     }
 }

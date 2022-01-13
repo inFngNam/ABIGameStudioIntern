@@ -22,7 +22,7 @@ public class Attack : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hitCollision)
     {
-        if (hitCollision.gameObject.CompareTag("Bot"))
+        if (hitCollision.gameObject.CompareTag("Bot") || hitCollision.gameObject.CompareTag("Box"))
         {
             Kick();
         }
