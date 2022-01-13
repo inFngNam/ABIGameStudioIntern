@@ -18,7 +18,7 @@ public class Bot : MonoBehaviour
 
     private void Update()
     {
-        if (gotHit && player.GetComponent<Player>().kicked)
+        if (gotHit && player.GetComponent<Attack>().kicked)
         {
             if (animateCounter % 60 >= 1.13f)
             {
