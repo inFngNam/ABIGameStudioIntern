@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Collect
+  - StartCollect
+  - Fill
+  - Target
+  - Bullet
   layers:
   - Default
   - TransparentFX
